@@ -1,0 +1,134 @@
+:root {
+    --primaria: #1a1a1a;
+    --detalhe: #d4af37;
+    --texto: #333;
+    --fundo: #f4f4f4;
+    --wpp-verde: #25D366;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: var(--fundo);
+}
+
+header {
+    background-color: var(--primaria);
+    padding: 1.5rem;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    color: var(--detalhe);
+    font-size: 2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.menu-abas {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.tab-link {
+    background: none;
+    border: none;
+    color: #888;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: 0.3s;
+}
+
+.tab-link.active {
+    color: var(--detalhe);
+    border-bottom: 3px solid var(--detalhe);
+    font-weight: bold;
+}
+
+/* Lógica de Abas */
+.aba-conteudo {
+    display: none;
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 20px;
+    animation: fadeIn 0.4s ease-in;
+}
+
+.aba-conteudo.active {
+    display: block;
+}
+
+.titulo-secao {
+    font-size: 2.5rem;
+    color: var(--primaria);
+    margin-bottom: 40px;
+    border-bottom: 5px solid var(--detalhe);
+    display: inline-block;
+}
+
+/* Grid de Contato */
+.contato-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: stretch;
+}
+
+.contato-info {
+    background: #fff;
+    padding: 60px;
+    border-left: 10px solid var(--detalhe);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.info-bloco {
+    margin-bottom: 40px;
+}
+
+/* Títulos Maiores (Labels) */
+.info-bloco strong {
+    display: block;
+    color: var(--detalhe);
+    font-size: 1.8rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+/* Conteúdo (Dados) */
+.info-bloco p, .info-bloco a {
+    margin: 0;
+    font-size: 1.6rem;
+    color: var(--primaria);
+    text-decoration: none;
+}
+
+/* Cor do WhatsApp */
+.link-whatsapp {
+    color: var(--wpp-verde) !important;
+    font-weight: 600;
+}
+
+.mapa-container {
+    height: 100%;
+    min-height: 500px;
+    border: 1px solid #ddd;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 900px) {
+    .contato-grid { grid-template-columns: 1fr; }
+}
