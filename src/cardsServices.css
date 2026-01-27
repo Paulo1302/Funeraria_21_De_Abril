@@ -17,6 +17,21 @@
   gap: 0.75rem;
 }
 
+.card-link {
+  margin-top: 0.5rem;
+  display: inline-block;
+  font-size: 0.9rem;
+  color: #1b4c7a; /* mesma cor usada em links/tema */
+  text-decoration: underline;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.card-link:hover {
+  text-decoration: none;
+  color: #163d63; /* tom um pouco mais escuro no hover */
+}
+
 .card h3 {
   font-size: 1.1rem;
 }
