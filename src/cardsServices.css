@@ -1,48 +1,72 @@
-/* Container dos cards */
+/* Grade de cards */
 .grid-servicos {
   display: grid;
-  gap: 1.5rem; /* Espaço entre os cards */
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   margin-top: 1.5rem;
 }
 
-/* Estilo de cada card */
-.card {
-  background-color: #ffffff; /* ou a cor do seu tema */
-  border-radius: 8px;
+/* Card base */
+.card-servico {
+  background-color: rgba(255, 255, 255, 0.9); /* levemente transparente */
+  border-radius: 12px;
   padding: 1.5rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
 }
 
-.card-link {
-  margin-top: 0.5rem;
-  display: inline-block;
+/* Cabeçalho: todos os títulos com mesmo estilo/alinhamento */
+.card-header h3 {
+  font-size: 1.1rem;
+  text-align: center;
+  margin-bottom: 0.75rem;
+}
+
+/* Corpo: altura fixa para alinhar o link no rodapé */
+.card-body {
+  flex: 1; /* empurra o footer pra baixo */
+}
+
+.card-descricao {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  text-align: justify;
+}
+
+/* Rodapé: destaque + link sempre na mesma altura */
+.card-footer {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+/* Destaque (texto informativo, não link) */
+.preco {
+  font-weight: 600;
+  color: #555555; /* mais neutro, diferente da cor de link */
   font-size: 0.9rem;
-  color: #1b4c7a; /* mesma cor usada em links/tema */
+}
+
+/* Link de ação: visual claramente de link */
+.card-link {
+  font-size: 0.9rem;
+  color: #1b4c7a; /* cor principal */
   text-decoration: underline;
   font-weight: 500;
-  cursor: pointer;
+  margin-left: auto; /* encosta à direita quando couber */
 }
 
 .card-link:hover {
   text-decoration: none;
-  color: #163d63; /* tom um pouco mais escuro no hover */
+  color: #163d63;
 }
 
-.card h3 {
-  font-size: 1.1rem;
-}
-
-.card p {
-  font-size: 0.95rem;
-  line-height: 1.4;
-}
-
-.card .preco {
-  margin-top: 0.5rem;
-  font-weight: 600;
-  color: #1b4c7a; /* ajuste para a cor principal da funerária */
+/* 5º card com leve variação (para se destacar, mas manter harmonia) */
+.grid-servicos .card-servico:nth-child(5) {
+  background-color: rgba(255, 255, 255, 0.85);
+  border: 1px dashed rgba(27, 76, 122, 0.3);
 }
