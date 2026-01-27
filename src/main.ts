@@ -1,4 +1,9 @@
-import './style.css'
+import './style.css';
+import './cardsServices.css';
+import { renderizarCardsServicos } from './cardsServices';
+
+
+renderizarCardsServicos('.grid-servicos');
 
 // Seleção de elementos com Tipagem Forte
 const botoes = document.querySelectorAll<HTMLButtonElement>('.tab-link');
