@@ -1,4 +1,5 @@
-// src/contato.ts
+import gmailIcon from "./img/gmail.jpg";
+import whatsappIcon from "./img/whatsapp.jpg";
 
 export function renderizarContato(selector: string) {
   const secao = document.querySelector<HTMLElement>(selector);
@@ -6,19 +7,48 @@ export function renderizarContato(selector: string) {
 
   secao.innerHTML = `
     <h2 class="titulo-secao">Contatos e Localização</h2>
+
     <div class="contato-grid">
       <div class="contato-info">
+
         <div class="info-bloco">
-          <strong>Endereço:</strong>
-          <p>RUA Aurino Correa Lima, n°37, Centro, Glória do Goitá-PE</p>
+          <h3>Endereço</h3>
+          <p>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Rua+Aurino+Correa+Lima,+37,+Centro,+Gl%C3%B3ria+do+Goit%C3%A1+-+PE"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="link-endereco"
+            >
+              Rua Aurino Correa Lima, n°37, Centro, Glória do Goitá-PE
+            </a>
+          </p>
         </div>
+
         <div class="info-bloco">
-          <strong>WhatsApp:</strong>
-          <p><a href="https://wa.me/5581999262736" target="_blank" class="link-whatsapp">+55 (81) 9 9926-2736</a></p>
+          <h3>Telefones</h3>
+          <p>
+            <span class="icone icone-telefone">📞</span>
+            <a href="tel:+558136581163">(81) 3658-1163</a>
+          </p>
+          <p>
+            <img src="${whatsappIcon}" alt="WhatsApp" class="icone-contato" />
+            <a href="https://wa.me/5581999262736" target="_blank" class="link-whatsapp">
+              +55 (81) 9 9926-2736
+            </a>
+          </p>
         </div>
+
         <div class="info-bloco">
-          <strong>E-mail:</strong>
-          <p>pf59980@gmail.com</p>
+          <h3>E-mails</h3>
+          <p>
+            <img src="${gmailIcon}" alt="E-mail" class="icone-contato" />
+            <a href="mailto:paulofernandocb@hotmail.com">paulofernandocb@hotmail.com</a>
+          </p>
+          <p>
+            <img src="${gmailIcon}" alt="E-mail" class="icone-contato" />
+            <a href="mailto:pf59980@gmail.com">pf59980@gmail.com</a>
+          </p>
         </div>
       </div>
 

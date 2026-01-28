@@ -1,0 +1,41 @@
+#contato .info-bloco a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#contato .info-bloco a:hover {
+  text-decoration: underline;
+}
+
+/* Ícones genéricos */
+#contato .icone {
+  font-size: 1.1rem;
+}
+
+/* Opcional: cores diferentes por tipo */
+#contato .icone-whatsapp {
+  color: #25d366;
+}
+
+#contato .icone-email {
+  color: #d4af37;
+}
+
+#contato .icone-telefone {
+  color: #555;
+}
+
+#contato .info-bloco p {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.15rem 0;
+}
+
+/* Ícones “do tamanho do texto” */
+#contato .icone-contato {
+  height: 1em;        /* usa a altura da fonte atual */
+  width: auto;        /* mantém proporção da imagem */
+  object-fit: contain;
+  flex-shrink: 0;     /* evita o ícone esmagar */
+}
