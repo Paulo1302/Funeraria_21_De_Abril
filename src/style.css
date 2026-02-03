@@ -1,179 +1,224 @@
-/* src/style.css - */
-
 :root {
-    --primaria: #1a1a1a;
-    --detalhe: #d4af37;
-    --texto: #333;
-    --fundo: #f4f4f4;
-    --wpp-verde: #25D366;
+  --primaria: #1a1a1a;
+  --detalhe: #d4af37;
+  --texto: #333;
+  --fundo: #f4f4f4;
+  --wpp-verde: #25D366;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    background-color: var(--fundo);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  background-color: var(--fundo);
 }
 
 /* --- HEADER E NAVEGAÇÃO --- */
 
 header {
-    background-color: var(--primaria);
-    padding: 1.5rem;
-    text-align: center;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    /* Adicionei uma altura mínima para garantir que cabe a logo grande */
-    min-height: 160px; 
+  background-color: var(--primaria);
+  padding: 0.75rem 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;   /* logo à esquerda, texto + abas à direita */
+  box-sizing: border-box;
 }
 
 /* Wrapper da Logo */
 .logo-header-wrapper {
-    position: absolute;
-    left: 30px;
-    top: 50%;
-    transform: translateY(-50%);
-    
-    /* --- TAMANHO AUMENTADO (Desktop) --- */
-    width: 300px;       
-    height: 300px;      
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    /* --- SOMBRA REMOVIDA --- */
-    /* A sombra estava criando a "barra preta fora de tom" no fundo escuro */
-    /* box-shadow: 0 4px 10px rgba(0,0,0,0.3); */
-    
-    z-index: 101; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+  flex-shrink: 0;
 }
 
 .logo-header-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
+/* Texto da logo (nome) */
 .logo {
-    color: var(--detalhe);
-    font-size: 2rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-    /* Margem extra para garantir que o texto não cole na logo se a tela for estreita */
-    margin-left: 160px; 
+  color: var(--detalhe);
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin: 0 0 0 0.75rem;
+  white-space: nowrap;
 }
 
+/* Container que agrupa nome + abas, para ocupar o resto da barra */
+.header-right {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: flex-end;
+}
+
+/* Barra de abas */
 .menu-abas {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    /* Margem extra também para o menu */
-    margin-left: 160px;
+  display: flex;
+  width: 100%;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
 }
 
+/* Botões de aba: preenchem a barra */
 .tab-link {
-    background: none;
-    border: none;
-    color: #888;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 1.1rem;
-    transition: 0.3s;
+  flex: 1;                 /* divide igualmente a largura */
+  background: none;
+  border: none;
+  color: #888;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .tab-link.active {
-    color: var(--detalhe);
-    border-bottom: 3px solid var(--detalhe);
-    font-weight: bold;
+  color: var(--detalhe);
+  border-bottom: 3px solid var(--detalhe);
+  font-weight: bold;
 }
 
 /* --- LÓGICA DE ABAS E SEÇÕES --- */
-/* (O restante do CSS permanece igual ao anterior) */
+
 .aba-conteudo {
-    display: none;
-    max-width: 1200px;
-    margin: 3rem auto;
-    padding: 0 20px;
-    animation: fadeIn 0.4s ease-in;
+  display: none;
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 0 20px;
+  animation: fadeIn 0.4s ease-in;
 }
+
 .aba-conteudo.active { display: block; }
+
 .titulo-secao {
-    font-size: 2.5rem;
-    color: var(--primaria);
-    margin-bottom: 40px;
-    border-bottom: 5px solid var(--detalhe);
-    display: inline-block;
+  font-size: 2.5rem;
+  color: var(--primaria);
+  margin-bottom: 40px;
+  border-bottom: 5px solid var(--detalhe);
+  display: inline-block;
 }
+
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* --- ESTILOS DE CONTATO --- */
+
 .contato-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    align-items: stretch;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: stretch;
 }
+
 .contato-info {
-    background: #fff;
-    padding: 60px;
-    border-left: 10px solid var(--detalhe);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  background: #fff;
+  padding: 60px;
+  border-left: 10px solid var(--detalhe);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
+
 .info-bloco { margin-bottom: 40px; }
+
 .info-bloco strong {
-    display: block;
-    color: var(--detalhe);
-    font-size: 1.8rem;
-    font-weight: 900;
-    text-transform: uppercase;
-    margin-bottom: 10px;
+  display: block;
+  color: var(--detalhe);
+  font-size: 1.8rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-bottom: 10px;
 }
+
 .info-bloco p, .info-bloco a {
-    margin: 0;
-    font-size: 1.6rem;
-    color: var(--primaria);
-    text-decoration: none;
+  margin: 0;
+  font-size: 1.6rem;
+  color: var(--primaria);
+  text-decoration: none;
 }
+
 .link-whatsapp { color: var(--wpp-verde) !important; font-weight: 600; }
-.mapa-container { height: 100%; min-height: 500px; border: 1px solid #ddd; }
+
+.mapa-container {
+  height: 100%;
+  min-height: 500px;
+  border: 1px solid #ddd;
+}
 
 /* --- RESPONSIVIDADE (MOBILE) --- */
 
 @media (max-width: 900px) {
-    .contato-grid { grid-template-columns: 1fr; }
+  /* Header em coluna no mobile */
+  header {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 
-    /* Ajustes do Header no Celular */
-    header {
-        /* Aumentado para compensar a logo maior */
-        padding-top: 11rem; 
-    }
-    
-    .logo {
-        margin-left: 0; /* Remove a margem lateral no celular */
-    }
-    .menu-abas {
-        margin-left: 0; /* Remove a margem lateral no celular */
-    }
+  .logo-header-wrapper {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 0.5rem;
+  }
 
-    .logo-header-wrapper {
-        top: 15px;       
-        left: 50%;       
-        transform: translateX(-50%);
-        
-        /* --- TAMANHO AUMENTADO (Mobile) --- */
-        width: 120px;
-        height: 120px;
-    }
+  .logo {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+
+  .header-right {
+    width: 100%;
+    align-items: center;
+  }
+
+  .menu-abas {
+    width: 100%;
+    gap: 0.4rem;
+  }
+
+  .tab-link {
+    flex: 1;
+    font-size: 0.95rem;
+    padding: 0.45rem 0.25rem;
+  }
+
+  /* Contato: grid vira uma coluna só */
+  .contato-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contato-info {
+    padding: 24px;
+    border-left-width: 6px;
+  }
+
+  .info-bloco {
+    margin-bottom: 20px;
+  }
+
+  .info-bloco strong {
+    font-size: 1.2rem;
+  }
+
+  .info-bloco p,
+  .info-bloco a {
+    font-size: 1rem;
+  }
+
+  .mapa-container {
+    min-height: 220px;
+  }
 }
