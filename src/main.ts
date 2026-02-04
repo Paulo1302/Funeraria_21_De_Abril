@@ -50,12 +50,19 @@ botoes.forEach((botao) => {
   });
 });
 
-// Clique nos cards -> ir para aba de contato COM scroll
-const cards = document.querySelectorAll<HTMLAnchorElement>('.card-servico');
-
-cards.forEach((card) => {
-  card.addEventListener('click', (event) => {
-    event.preventDefault();
-    ativarAba('contato', true);
+// Função para anexar eventos aos cards após renderização
+function anexarEventosCards() {
+  const cards = document.querySelectorAll<HTMLAnchorElement>('.card-servico');
+  
+  cards.forEach((card) => {
+    card.addEventListener('click', (event) => {
+      event.preventDefault();
+      ativarAba('contato', true);
+    });
   });
-});
+}
+
+// Aguarda um pequeno intervalo para garantir que os cards foram renderizados
+setTimeout(() => {
+  anexarEventosCards();
+}, 100);
