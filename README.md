@@ -1,22 +1,27 @@
-# Site_Funeraria# Site Funerária 21 de Abril
+# Site Funerária 21 de Abril
 
-Site institucional da Funerária 21 de Abril - Santuário Paz, desenvolvido com Vite, TypeScript e CSS vanilla.
+Site institucional da **Funerária 21 de Abril - Santuário Paz**, com informações sobre a empresa, serviços oferecidos e canais de contato.
 
-## 🚀 Tecnologias
+## 🌐 Acesse o site
 
-- **Vite** - Build tool e dev server
-- **TypeScript** - Superset tipado de JavaScript
-- **CSS3** - Estilização com variáveis CSS
-- Sem dependências de runtime
+👉 https://paulo1302.github.io/Funeraria_21_De_Abril/ [web:366][web:372]
 
-## 📋 Pré-requisitos
+## 🚀 Tecnologias utilizadas
 
-- Node.js 18+ 
-- npm ou yarn
+- **Vite** – ferramenta de build e empacotamento
+- **TypeScript** – JavaScript com tipagem estática
+- **CSS3** – estilização responsiva com variáveis CSS
 
-## 🔧 Instalação
+## ✨ Funcionalidades
 
-1. Clone o repositório:
-```bash
-git clone https://github.com/Paulo1302/Funerarai_21_De_Abril.git
-cd Funeraria_21_De_Abril
+- Navegação por abas (Sobre, Serviços, Contato)
+- Cards de serviços com chamada para contato
+- Seção de contatos com links clicáveis para:
+  - WhatsApp
+  - Telefones
+  - E-mails
+  - Endereço aberto diretamente no Google Maps [web:267]
+
+## 📄 Licença
+
+Projeto de uso pessoal/estudo. Ajuste a licença conforme necessário se for reutilizar ou adaptar o código.
