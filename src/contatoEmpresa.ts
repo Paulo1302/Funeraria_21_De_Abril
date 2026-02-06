@@ -29,7 +29,7 @@ export function renderizarContato(selector: string) {
           <h3>Telefones</h3>
           <p>
             <span class="icone icone-telefone">📞</span>
-            <a href="tel:+558136581163">(81) 3658-1163</a>
+            <a href="tel:+558136581163">(81) 99926-2736</a>
           </p>
           <p>
             <img src="${whatsappIcon}" alt="WhatsApp" class="icone-contato" />

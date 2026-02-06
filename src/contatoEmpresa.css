@@ -4,6 +4,16 @@
   color: inherit;
 }
 
+/* Estilização específica para o link de endereço */
+#contato .info-bloco a.link-endereco {
+  color: #007BFF;            /* Define a cor azul */
+  text-decoration: underline; /* Adiciona a barra inferior */
+}
+
+#contato .info-bloco a.link-endereco:hover {
+  color: #0056b3;            /* Tom de azul mais escuro ao passar o mouse */
+}
+
 #contato .info-bloco a:hover {
   text-decoration: underline;
 }
